@@ -23,13 +23,11 @@ split = sample.split(dataset$Temperatura.Media..C., SplitRatio = 0.75)
 training = subset(dataset, split == TRUE)
 testing = subset(dataset, split == FALSE)
 
-
-
 # Aplicación del modelo
-linearRegression = LinearRegressionGD(lrate = 0.0005, niter = 100000,
+linearRegression = LinearRegressionGD(lrate = 0.0005, niter = 10000,
                                       X = training$Temperatura.Media..C.,
                                       y = training$Consumo.de.cerveja..litros.,
-                                      c(18, 0.8))
+                                      c(20.0, 0.6))
 
 ypred = testing$Temperatura.Media..C.*linearRegression[2]+
   linearRegression[1]

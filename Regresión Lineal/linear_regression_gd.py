@@ -65,8 +65,3 @@ plt.title("Consumo de cerveza vs Temperatura Sao Paulo (Conjunto de Test)")
 plt.xlabel("Temperatura °C Sao Paulo")
 plt.ylabel("Consumo cerveza en Litros")
 plt.show()
-
-
-
-
-        
