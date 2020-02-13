@@ -1,0 +1,34 @@
+---
+title: "Ecuaciones"
+author: "Daniel"
+date: "20-01-2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Regresión Lineal
+
+$$y = \beta _0+\beta_1x$$
+$$h(x) = \theta_0+\theta_1x$$
+$$J(\theta_0, \theta_1)= \frac{1}{2m}\sum_{i=1}^{m}(h(x)-y)^2$$
+
+## Regresión Lineal 2
+repetir hasta converger{
+$$\theta_j = \theta_j-\alpha\cdot \frac{\partial}{\partial \theta_j}J(\theta_0, \theta_1)\thinspace \thinspace \thinspace \forall \thinspace  j=0 \thinspace \thinspace  and \thinspace  \thinspace  j =1$$
+}
+
+
+## Regresión Lineal 3
+
+repetir hasta converger{
+$$\theta_j = \theta_j-\alpha\cdot \frac{\partial}{\partial \theta_j}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})$$
+
+$$\theta_j = \theta_j-\alpha\cdot \frac{\partial}{\partial \theta_j}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x^{(i)}$$
+}
+
+## Regresión Lineal 4
+
+$$x_{stand} = \frac{x_j-\mu_j}{\sigma_j}$$
