@@ -32,3 +32,42 @@ $$\theta_j = \theta_j-\alpha\cdot \frac{\partial}{\partial \theta_j}\sum_{i=1}^{
 ## Regresión Lineal 4
 
 $$x_{stand} = \frac{x_j-\mu_j}{\sigma_j}$$
+
+## Regresión Logística 1
+
+$$Y_i = \left\{\begin{array}\\ 1: \mbox{Evento exitoso}\\0: \mbox{en caso contrario} \end{array}\right.$$
+
+$$P_i = Pr(Y_i = 1) = P(X_i,\theta)$$
+$$Q_i = Pr(Y_i = 0) = 1-P(X_i,\theta) = Q(X_i,\theta)$$
+
+$$odds = \frac{P}{1-P}$$
+$$P = \theta_0+\theta_1x$$
+
+## Regresión logística 2
+
+$$logit(p) = ln(odds) =  ln(\frac{p}{1-p})$$
+$$logit(p)=\theta_0\cdot x_0+\theta_1\cdot x_1+...+\theta_m\cdot x_m = \sum_{i=0}^{m}{\theta_ix_i} = \theta^{T}\cdot x $$
+
+$$\phi(z) = \frac{1}{1-e^{-z}}$$
+
+$$z= \theta_0\cdot x_0+\theta_1\cdot x_1+...+\theta_m\cdot x_m = \sum_{i=0}^{m}{\theta_ix_i} = \theta^{T}\cdot x$$
+
+$$h_\theta(x)= \phi(\theta^{T}x)$$
+
+## Regresión logística 3
+
+$$h_\theta(x)\geq0.5$$
+
+$$h_\theta(x)<0.5$$
+
+$$Cost(h_{\theta}(x),y) = \left\{\begin{array}\\ -\log(h_{\theta}(x))  &   \mbox{si y = 1}\\-\log(1-h_{\theta}(x)) & \mbox{si y = 0} \end{array}\right.$$
+
+$$J(\theta) =\frac{1}{m}\sum_{i=1}^{m}Cost(h_{\theta}(x),y)$$
+
+$$J(\theta) = \frac{1}{m}[\sum_{i=1}^{m}y\log h_{\theta}(x)+(1-y)\log (1-h_{\theta}(x))]$$
+
+## Regresión logística 4
+
+repetir hasta converger{
+$$ \theta _{j} := \theta_{j}- \alpha \sum_{i=1}^{m}(h_{\theta}(x^{i})-y^{i})\cdot x^{i}$$
+}

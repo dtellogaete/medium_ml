@@ -3140,7 +3140,41 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2>Regresión Lineal 4</h2></hgroup><article  id="regresión-lineal-4">
 
-<p>\[x_{stand} = \frac{x_j-\mu_j}{\sigma_j}\]</p></article></slide>
+<p>\[x_{stand} = \frac{x_j-\mu_j}{\sigma_j}\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Regresión Logística 1</h2></hgroup><article  id="regresión-logística-1">
+
+<p>\[Y_i = \left\{\begin{array}\\ 1: \mbox{Evento exitoso}\\0: \mbox{en caso contrario} \end{array}\right.\]</p>
+
+<p>\[P_i = Pr(Y_i = 1) = P(X_i,\theta)\] \[Q_i = Pr(Y_i = 0) = 1-P(X_i,\theta) = Q(X_i,\theta)\]</p>
+
+<p>\[odds = \frac{P}{1-P}\] \[P = \theta_0+\theta_1x\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Regresión logística 2</h2></hgroup><article  id="regresión-logística-2">
+
+<p>\[logit(p) = ln(odds) =  ln(\frac{p}{1-p})\] \[logit(p)=\theta_0\cdot x_0+\theta_1\cdot x_1+...+\theta_m\cdot x_m = \sum_{i=0}^{m}{\theta_ix_i} = \theta^{T}\cdot x \]</p>
+
+<p>\[\phi(z) = \frac{1}{1-e^{-z}}\]</p>
+
+<p>\[z= \theta_0\cdot x_0+\theta_1\cdot x_1+...+\theta_m\cdot x_m = \sum_{i=0}^{m}{\theta_ix_i} = \theta^{T}\cdot x\]</p>
+
+<p>\[h_\theta(x)= \phi(\theta^{T}x)\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Regresión logística 3</h2></hgroup><article  id="regresión-logística-3">
+
+<p>\[h_\theta(x)\geq0.5\]</p>
+
+<p>\[h_\theta(x)&lt;0.5\]</p>
+
+<p>\[Cost(h_{\theta}(x),y) = \left\{\begin{array}\\ -\log(h_{\theta}(x))  &amp;   \mbox{si y = 1}\\-\log(1-h_{\theta}(x)) &amp; \mbox{si y = 0} \end{array}\right.\]</p>
+
+<p>\[J(\theta) =\frac{1}{m}\sum_{i=1}^{m}Cost(h_{\theta}(x),y)\]</p>
+
+<p>\[J(\theta) = \frac{1}{m}[\sum_{i=1}^{m}y\log h_{\theta}(x)+(1-y)\log (1-h_{\theta}(x))]\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Regresión logística 4</h2></hgroup><article  id="regresión-logística-4">
+
+<p>repetir hasta converger{ \[ \theta _{j} := \theta_{j}- \alpha \sum_{i=1}^{m}(h_{\theta}(x^{i})-y^{i})\cdot x^{i}\] }</p></article></slide>
 
 
   <slide class="backdrop"></slide>

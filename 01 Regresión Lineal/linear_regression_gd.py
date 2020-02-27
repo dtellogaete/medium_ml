@@ -32,7 +32,7 @@ class LinearRegressionGD(object):
         predict_value = X_test*self.theta[1]+self.theta[0]
         return predict_value   
        
-# Importar el dataset de entranamiento
+# Importar el dataset de entrenamiento
 dataset = pd.read_csv('Admission_Predict_Ver1.1.csv')
 X = dataset.iloc[:len(dataset), 1].values
 X = X.reshape(-1,1)
