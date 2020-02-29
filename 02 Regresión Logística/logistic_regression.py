@@ -21,8 +21,7 @@ class LogisticRegressionGD(object):
     def fit(self, X, y):
         rgen = np.random.RandomState(self.random_state)        
         self.theta = rgen.normal(loc = 0.0, scale = 0.01,
-                                 size = 1 + X.shape[1])      
-        const = self.l_rate     
+                                 size = 1 + X.shape[1])     
         for i in range(self.n_iter):
             net_input = self.net_input(X)
             h = self.sigmoid(net_input)   
@@ -68,6 +67,11 @@ logistic = LogisticRegression(random_state = 0)
 logistic.fit(X_train, y_train)
 y_predict_py = logistic.predict(X_test)
 
+# Matriz de confusión para ver resultados finales
+from sklearn.metrics import confusion_matrix
+cm_sklearn = confusion_matrix(y_test, y_predict_py)
+cm_GD = confusion_matrix(y_test, y_predict)
+
 # Visualización del dataset
 
 dataset_0 = dataset[dataset['Purchased']==0]
@@ -89,6 +93,9 @@ def lineal_sklearn(x):
 def lineal_GD(x):
     return coef[2]*x+coef[1]
 
+def lineal_glmR(x):
+    return -2.616*x-1.4
+
 data_vix = pd.DataFrame({'Age':X_test[:,0], 'Salary': X_test[:,1], 
                         'Purchased': y_test})
 data_vix_0 = data_vix[data_vix['Purchased']==0]
@@ -100,6 +107,7 @@ plt.scatter(X_1[:,0],X_1[:,1], color = "blue", label = "Purchased = 1")
 X = data_vix.iloc[:len(data_vix_0),0].values
 plt.plot(X, lineal_sklearn(X), color = "darkslategray", label = "sklearn")
 plt.plot(X, lineal_GD(X), color = "green", label = "GD")
+plt.plot(X, lineal_glmR(X), color = "orange", label = "R")
 plt.ylim(-3.5, 3.5)
 plt.xlabel("Edad de los usuarios")
 plt.ylabel("Salario Anual $")
@@ -107,7 +115,4 @@ plt.legend(loc = 'upper right', shadow = True)
 plt.title("Edad vs Salario")
 plt.show()
 
-# Matriz de confusión para ver resultados finales
-from sklearn.metrics import confusion_matrix
-cm_sklearn = confusion_matrix(y_test, y_predict_py)
-cm_GD = confusion_matrix(y_test, y_predict)
+
