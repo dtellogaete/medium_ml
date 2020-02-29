@@ -73,9 +73,7 @@ $$ \theta _{j} := \theta_{j}- \alpha \cdot \frac{1}{m} \sum_{i=1}^{m}(h_{\theta}
 }
 
 
-
-
-
 repetir hasta converger{
 $$ \theta _{j} := \theta_{j}- \alpha \cdot \frac{1}{m} \sum_{i=1}^{m}(h_{\theta}(x^{i})-y^{i})\cdot x^{i}$$
 }
+
